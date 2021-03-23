@@ -1,0 +1,9 @@
+ // calculator polonais
+.constant
+endline 10 //fin de ligne
+add   43
+sub  45
+digitFirst 48 //Début des chiffres
+digitLast 57 //Fin des chiffres
+one 48
+.end-constant

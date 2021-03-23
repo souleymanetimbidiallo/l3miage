@@ -1,0 +1,67 @@
+//Notation polonaise
+
+.constant
+endline 10      //fin de ligne
+plus   43        //pour le "+"
+minus 45         // pour le "-"
+digitFirst 48   //Début des chiffres
+digitLast 57    //Fin des chiffres
+one 48          //pour verifier la supériorité ou infériorité
+.end-constant
+
+.main
+L1:     IN              // Cette instruction lit un caractère et le met sur la pile
+        DUP             // Duplique l'élément au sommet de la pile (pour la comparaison)
+        BIPUSH 0x0      // Empile 0x0 pour comparer avec le caractère lu
+        IF_ICMPEQ L2    // Dépile deux valeurs; si elles sont égales, brancher vers L2
+        DUP
+        LDC_W endline   // Empile la touche "Entrée"
+        IF_ICMPEQ result // Vérifier si la touche Entrée est le caractère saisi
+        DUP
+        LDC_W plus      //Empiler "+"
+        IF_ICMPEQ sum   //Vérifier si "+" est le caractère saisi
+        DUP
+        LDC_W minus     //Empiler "-"
+        IF_ICMPEQ substract   //Vérifier si "-" est le caractère saisi
+        DUP
+        LDC_W one       // Empiler 1
+        IADD            // Additionner à la valeur saisi
+        LDC_W digitFirst //Empiler 0 
+        ISUB            //Faire la soustraction avec le deux précédants
+        IFLT less9      //Verifier que c'est bien un chiffre inférieur à 9
+
+less9:  DUP 
+        LDC_W one       //Empiler 1
+        ISUB            //Le soustraire à la valeur saisi
+        LDC_W digitFirst
+        ISUB
+        IFLT isDigit
+        GOTO L1
+
+isDigit: DUP
+         POP
+         BIPUSH 0x30
+         ISUB           //convertir l'ascii en entier
+         GOTO L1
+
+
+sum:    POP
+        IADD            // Additionne la valeur avec les précédants sur la pile
+        GOTO L1
+
+substract: POP          // Soustrait la valeur avec les précédants sur la pile
+           ISUB
+           GOTO L1
+
+result: POP             // Dépiler une valeur
+        BIPUSH 0x30
+        IADD            // convertir l'entier en ascii
+        OUT
+        HALT            // Arrêter le programme
+
+
+L2:     POP     // Le caractère lu est vide, on l'enlève de la pile
+        GOTO L1 // Et on revient au début
+
+
+.end-main

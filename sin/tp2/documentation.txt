@@ -1,0 +1,8 @@
+TP2
+
+Question 1:
+Pour éviter un débordement de capacité de notre multiplieur, 
+nous aurons besoin d'une sortie de 6bits. 
+
+En effet, quand on multiplie deux variables de 3bits 
+on peux obtenir aux maximum 110001 un nombre de 6bits.

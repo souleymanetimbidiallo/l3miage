@@ -1,0 +1,12 @@
+.main			// Début du programme
+
+// Code du programme
+start:	BIPUSH 0x20	// 20 en hexadécimal == 32 en décimal
+	BIPUSH 0x12 	// 12 en hexadécimal == 18 en décimal
+	ISUB   		// Calcule A-B, remet le résultat sur la pile
+	BIPUSH 0x7	// 7 en hexadécimal == 7 en décimal
+	IADD  		// Additionne les deux variables sur la pile
+	DUP		// Duplique le sommet de la pile
+	IADD		// Additionne les deux variables sur la pile
+.end-main
+

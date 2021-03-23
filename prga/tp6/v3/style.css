@@ -1,0 +1,15 @@
+.text-field:focused{
+    -fx-border-color: blue ;
+    -fx-border-width: 3; 
+    -fx-border-style: solid ;
+}
+
+.custom-black-cell{
+	
+	-fx-control-inner-background: #000;
+}
+
+.custom-green-cell{
+	
+	-fx-control-inner-background: #00FF00;
+}

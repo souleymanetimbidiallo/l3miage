@@ -1,0 +1,29 @@
+EXERCICE 1:
+1) Donner le code php dans ce fichier:
+ PHP: <?php echo 'Premiers pas en PHP'; ?>
+
+EXERCICE 2:
+L'inclusion des fichiers en php permet une modularite du code php avec le code html
+
+EXERCICE 3:
+
+
+EXERCICE 5:
+a) Les cles pour le premier tableau sont des indices en entiers de 0...11
+
+a) Les cles pour le second tableau sont des chaines de caracteres et
+    les valeurs sont des entiers
+
+EXERCICE 6:
+1) - Les cles du tableau $personnes: "mdupont", "jm", "toto", "arn", "email" et "dask"0...11
+   - Les valeurs de ce tableau sont de type tableau (array)
+   - La valeur associe a toto: array('prenom' => 'Tom', 'nom' => 'Tonge', 'age' => 18, 'ville' => 'Epinay')
+
+2) - Acces a la valeur 33 => $personnes["arn"]["age"]
+   - Acces a la valeur "Epinay" => $personnes["toto"]["ville"]
+   - Acces au tableau contenant les valeurs 'Damien', 'Askier', 7, 'Villetaneuse => $personnes["dask"]
+
+3) Ecriture de la fonction affichage du tableau : (voir le fichier exo6.php)
+3) Ecriture de la fonction recherche de ville : (voir le fichier exo6.php)
+
+EXERCICE 7:
